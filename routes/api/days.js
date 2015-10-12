@@ -11,7 +11,8 @@ var Promise = require('bluebird');
 // Adding a day
 router.post('/api/day', function(req, res, next) {
 	var numDay = Number(req.body.numDay);
-	Day.create({number: numDay})
+	var user = req.body.user;
+	Day.create({number: numDay, user: user})
 		.then(function(day) {
 			res.json(day);
 		})

@@ -78,6 +78,7 @@
   var all_restaurants = {{ all_restaurants | json }};
   var all_activities = {{ all_activities | json }};
   var all_days = {{ all_days | json }}
+  var user = {{ user | json }};
   var hotelsIndex = all_hotels.reduce(function(prev, next) {
     prev[next._id] = next;
     return prev;
