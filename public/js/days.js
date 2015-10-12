@@ -11,16 +11,16 @@ var daysModule = (function(){
     $.ajax({
       type: 'POST',
       url: '/api/day',
-      data: {numDay: days.length},
+      data: {numDay: days.length, user: user},
       success: function(data) {
         var id = data._id;
         days.push({
           hotels: [], //HOTELS
           restaurants: [],
           activities: [],
-          id: id
+          id: id,
+          user: user
         });
-        console.log(data);
         renderDayButtons();
         switchDay(days.length - 1);
       },
@@ -99,7 +99,7 @@ var daysModule = (function(){
     day = day || currentDay;
     console.log(day);
     Object.keys(day).forEach(function(type){
-      if (type === 'id') return;
+      if (type === 'id' || type === 'user') return;
       var $list = $('#itinerary ul[data-type="' + type + '"]');
       $list.empty();
       day[type].forEach(function(attraction){
