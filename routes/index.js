@@ -8,6 +8,11 @@ var Promise = require('bluebird');
 var Day = models.Day;
 
 router.get('/', function(req, res) {
+  res.render('login')
+})
+
+
+router.get('/:user', function(req, res) {
   Promise.all([
     Hotel.find(),
     Restaurant.find(),
