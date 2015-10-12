@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div id="app" class="clearfix">
+  <div class="map-container col-sm-12 col-lg-12">
+    <div>
+      <div id="map-canvas"></div>
+    </div>
+  </div>
+</div>
+<!-- <div class="modal fade"> -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title">Login to TripPlanner</h4>
+      </div>
+      <form name="loginForm" id="login" action="/validate/" method="GET">
+      <div class="modal-body">
+          <input type="text" name="name" placeholder="Username" class="center-block form-control"/>        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary center-block" data-dismiss="modal">Submit</button>
+      </div>
+      </form>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+<!-- </div>/.modal -->
+
+{% endblock %}
